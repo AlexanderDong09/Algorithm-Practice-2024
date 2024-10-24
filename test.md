@@ -68,4 +68,6 @@ for (let i = 0; i <= random; i++) {
 }
 ```
 
-has if statements that show decision makin, along with iteration (for i = 0 and i is less than/equal to random, you add one)
+has if statements that show decision making. depending on the value of i when modulo'd by different values, the opposing choice of RPS is chosen. iteration is also present (for i = 0 and i is less than/equal to random, you add one)
+
+f
