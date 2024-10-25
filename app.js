@@ -39,24 +39,31 @@ function binaryToDecimal(binary value){
 
 function binaryToDecimal(b) {
   let dec = 0;
-  for (let i = b.length; i != 0; i--) {
-    if (b[i - 1] === "1") {
-      dec += 2 ** (i - 1);
+  for (let i = b.length - 1; i >= 0; i--) {
+    if (b[i] === "1") {
+      dec += 2 ** (b.length - 1 - i); // 2*2*2
     }
   }
+
   console.log(dec);
 }
 
-binaryToDecimal("1111111111");
+binaryToDecimal("1010"); // 8 + 0 + 0 + 1 = 10
 
-
-function decimalToBinary(d){
-  let bin = 0;
-  for (let i = d.length;){
-
+function decimalToBinary(d) {
+  let bin = "";
+  while (d != 0) {
+    if (d % 2 == 1) {
+      bin += "1";
+      d = (d - 1) / 2;
+    } else {
+      bin += "0";
+    }
   }
+
+  return bin;
 }
 
-decimalToBinary("10")
+console.log(decimalToBinary("8"));
 
-// biggest power of 2 thats less than base ten? what 
+// biggest power of 2 thats less than base ten? what
